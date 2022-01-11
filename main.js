@@ -57,8 +57,10 @@ const posts = [
 ];
 
 const container = document.querySelector(".posts-list");
+
 let addLikePost = document.querySelector(".like-button");
 addLikePost = false;
+
 for (let i = 0; i < posts.length; i++){
 
     container.innerHTML += `
@@ -95,7 +97,7 @@ for (let i = 0; i < posts.length; i++){
     `;
 }
 
-document.querySelector(".like-button").addEventListener("click", function() {
+document.querySelectorAll(".like-button").addEventListener("click", function() {
     addLikePost = true;
     if(addLikePost == true){
         
