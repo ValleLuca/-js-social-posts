@@ -38,7 +38,7 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "LF"
         },
         "likes": 56,
         "created": "2021-04-03"
@@ -57,7 +57,8 @@ const posts = [
 ];
 
 const container = document.querySelector(".posts-list");
-
+let addLikePost = document.querySelector(".like-button");
+addLikePost = false;
 for (let i = 0; i < posts.length; i++){
 
     container.innerHTML += `
@@ -65,7 +66,7 @@ for (let i = 0; i < posts.length; i++){
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${posts[i].author.image}" alt="Phil Mangione">                    
+                    <img class="profile-pic" src="${posts[i].author.image}" alt="${posts[i].author.image}">                    
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${posts[i].author.name}</div>
@@ -80,7 +81,7 @@ for (let i = 0; i < posts.length; i++){
         <div class="post__footer">
             <div class="likes js-likes">
                 <div class="likes__cta">
-                    <a class="like-button  js-like-button" href="#" data-postid="1">
+                    <a class="like-button  js-like-button" href="#!" data-postid="1">
                         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                         <span class="like-button__label">Mi Piace</span>
                     </a>
@@ -93,3 +94,10 @@ for (let i = 0; i < posts.length; i++){
     </div>
     `;
 }
+
+document.querySelector(".like-button").addEventListener("click", function() {
+    addLikePost = true;
+    if(addLikePost == true){
+        
+    }
+  });
